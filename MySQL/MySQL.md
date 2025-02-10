@@ -37,7 +37,33 @@
 
 #### Naming conventions are a set of guideline that make strong foundations for such a consistent system. These guidelines ensure that the names of database entities are readable, easy to use in queries and do not collide with names of other defined entities or keywords.
 
+## primary keys vs unique keys
 
+
+#### A primary key : is a unique identifier that differentiates each row in a table. It strictly prohibits NULL and duplicate values, thereby maintaining the integrity of the table. A primary key doesn't allow either Duplicate or NULL values. Moreover, it can serve as a foreign key in other tables.
+
+#### A unique key : is a distinctive attribute used to prevent duplicate values in a column. Its main function is to enforce uniqueness within a column. However, unlike a primary key, a unique key can accept a NULL value.
+
+## constraints in MySQL.
+
+
+#### SQL constraints are used to specify rules for data in a table like :
+#### NOT NULL - Ensures that a column cannot have a NULL value
+#### UNIQUE - Ensures that all values in a column are different
+#### PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+#### FOREIGN KEY - Prevents actions that would destroy links between tables
+#### CHECK - Ensures that the values in a column satisfies a specific condition
+#### DEFAULT - Sets a default value for a column if no value is specified
+#### CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+## indexing in MySQL.
+
+
+#### Indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin with the first row and then read through the entire table to find the relevant rows. The larger the table, the more this costs. If the table has an index for the columns in question, MySQL can quickly determine the position to seek to in the middle of the data file without having to look at all the data. This is much faster than reading every row sequentially.
+
+## 🌟Difference between MySQL and Postgresql.
+
+#### MySQL and PostgreSQL are two of the most widely used open-source relational database management systems. MySQL is known for its speed and ease of use, making it ideal for web applications and read-heavy workloads. PostgreSQL called “Postgres,” offers advanced features and strong data integrity by making it suitable for complex queries and transactions.
 
 
 ## Resources
@@ -52,3 +78,11 @@
 #### https://cloud.google.com/learn/what-is-a-relational-database
 
 #### https://unacademy.com/content/cbse-class-11/difference-between/dbms-and-rdbms/
+
+#### https://testbook.com/key-differences/difference-between-primary-key-and-unique-key
+
+#### https://www.w3schools.com/mysql/mysql_constraints.asp
+
+#### https://dev.mysql.com/doc/refman/8.4/en/mysql-indexes.html
+
+#### https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
