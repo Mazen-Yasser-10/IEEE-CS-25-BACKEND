@@ -63,8 +63,23 @@
 
 ## 🌟Difference between MySQL and Postgresql.
 
+
 #### MySQL and PostgreSQL are two of the most widely used open-source relational database management systems. MySQL is known for its speed and ease of use, making it ideal for web applications and read-heavy workloads. PostgreSQL called “Postgres,” offers advanced features and strong data integrity by making it suitable for complex queries and transactions.
 
+## Relations (one to one, one to many, many to many).
+
+
+#### One-to-one: A record in one table is related to one record in another table. One-to-many: A record in one table is related to many records in another table. Many-to-many: Multiple records in one table are related to multiple records in another table.
+
+## Write-ahead logging.
+
+
+#### In computer science, write-ahead logging (WAL) is a family of techniques for providing atomicity and durability (two of the ACID properties) in database systems. A write ahead log is an append-only auxiliary disk-resident structure used for crash and transaction recovery. The changes are first recorded in the log, which must be written to stable storage, before the changes are written to the database.The main functionality of a write-ahead log can be summarized as:Allow the page cache to buffer updates to disk-resident pages while ensuring durability semantics in the larger context of a database system.Persist all operations on disk until the cached copies of pages affected by these operations are synchronized on disk. Every operation that modifies the database state has to be logged on disk before the contents on the associated pages can be modifiedAllow lost in-memory changes to be reconstructed from the operation log in case of a crash.
+
+## What are normalization and denormalization? Explain their differences.
+
+
+#### The goal of normalization is to minimize data redundancy and dependency by organizing data into well-structured tables. Denormalization involves combining tables that have been normalized to improve query performance and simplify data retrieval.
 
 ## Resources
 #### https://www.techtarget.com/searchdatamanagement/definition/database
@@ -86,3 +101,11 @@
 #### https://dev.mysql.com/doc/refman/8.4/en/mysql-indexes.html
 
 #### https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
+
+#### https://dzone.com/articles/how-to-handle-a-many-to-many-relationship-in-datab
+
+#### https://en.wikipedia.org/wiki/Write-ahead_logging 
+
+#### https://blog.purestorage.com/purely-educational/denormalized-vs-normalized-data/
+
+
