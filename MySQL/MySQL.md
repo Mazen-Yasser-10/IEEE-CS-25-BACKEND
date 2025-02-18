@@ -81,6 +81,48 @@
 
 #### The goal of normalization is to minimize data redundancy and dependency by organizing data into well-structured tables. Denormalization involves combining tables that have been normalized to improve query performance and simplify data retrieval.
 
+## What is Multi-Version Concurrency Control (MVCC) in DBMS?
+
+
+#### Multi-Version Concurrency Control is a technology, utilized to enhance databases by resolving concurrency problems and also data locking by preserving older database versions. When many tasks attempt to update the same piece of data simultaneously, MVCC causes a conflict and necessitates a retry from one or more of the processes.
+
+## What is SQL Trigger?
+
+
+#### A trigger is a stored procedure in a database that automatically invokes whenever a special event in the database occurs. By using SQL triggers, developers can automate tasks, ensure data consistency, and keep accurate records of database activities. For example, a trigger can be invoked when a row is inserted into a specified table or when specific table columns are updated.
+
+## How can you take the backup of a database?
+
+#### While the exact strategy varies widely between infrastructure, requirements, and data types, most database backup types fall into three major categories — full, differential, and incremental. Though some organizations leverage more advanced variations of these backups, knowing these three is good to get started.
+
+### Full database backups
+
+#### While almost every backup strategy aims to create a full database backup, in this case, a “full database backup” refers to a single process. In other words, if your backup strategy uses a full database backup, you make a complete backup every time you backup your database.
+
+**Pros:** Making a complete copy of your database every time ensures all data is accounted for and shortens recovery times.  
+**Cons:** Full database backups can be extremely resource-intensive, especially for frequent backups or on infrastructure with limited bandwidth.
+
+### Incremental database backup
+
+#### If a database only receives a few select updates between backups, it rarely makes sense to copy the entire database every time you create one.
+
+Incremental database backups solve this problem by creating backups in small parts or increments rather than all at once. These increments are simply the changes since the last backup, with most organizations utilizing the “modified” timestamp on files to check which data was changed. 
+
+Incremental backups are usually the more efficient solution. Leading tools like Fivetran utilize CDC replication to move large datasets in near-real time.
+
+**Pros:** Incremental backups require very few resources, allowing for more frequent updates, real-time replication, and less disk space.  
+**Cons:** May present a small room for error if some changed data isn’t captured. However, this is very rare.
+
+### Differential database backup
+
+#### Most organizations still make occasional full backups to ensure data integrity and accuracy. Differential backups make several incremental backups between each full backup to leverage the best of both worlds.
+
+Here, each incremental backup is saved until the next full backup, allowing for a complete record of changes over a certain period. This provides similar accuracy as full data backups without consuming the same number of resources. 
+
+**Pros:** Differential backups provide more detailed information about data changes without sacrificing as many resources as full backups.  
+**Cons:** More backup copies still require more storage than incremental backups.
+
+
 ## Resources
 #### https://www.techtarget.com/searchdatamanagement/definition/database
 
@@ -107,5 +149,11 @@
 #### https://en.wikipedia.org/wiki/Write-ahead_logging 
 
 #### https://blog.purestorage.com/purely-educational/denormalized-vs-normalized-data/
+
+#### https://www.geeksforgeeks.org/what-is-multi-version-concurrency-control-mvcc-in-dbms/
+
+#### https://www.geeksforgeeks.org/sql-trigger-student-database/
+
+#### https://www.fivetran.com/learn/database-backup
 
 
