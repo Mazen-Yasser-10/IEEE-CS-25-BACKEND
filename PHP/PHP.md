@@ -28,6 +28,37 @@
 
 #### PHP is a case-sensitive language, which means that variables, function names, and other identifiers are distinguished by their capitalization. This means that “hello” and “Hello” are considered different variables in PHP.
 
+## programming language vs scripting language.
+
+
+#### The primary distinction between these two types of languages is that the former is typically interpreted, meaning that the code is executed line by line, rather than compiled into machine code and run as an executable file. Hence, with scripting languages, programmers can make changes to the code and test it without having to recompile the entire program.
+
+#### Compiled programming languages, on the other hand, are translated into machine code and saved as an executable file, which can be run without the need for an interpreter. Programming languages are often more powerful and efficient than scripting languages, but they can also be more complex and harder to learn. Examples of compiled programming languages include C, Java, and C++.
+
+#### Scripting languages are used for smaller tasks, whereas programming languages help build large and complex software applications, such as operating systems and enterprise-level software. They are also used for developing lower-level system software, such as device drivers and system utilities.
+
+## dynamically typed vs statically typed language.
+
+
+#### There are two main differences between dynamic typing and static typing that you should be aware of when writing transformation scripts.
+
+#### First, dynamically-typed languages perform type checking at runtime, while statically typed languages perform type checking at compile time. This means that scripts written in dynamically-typed languages (like Groovy) can compile even if they contain errors that will prevent the script from running properly (if at all). If a script written in a statically-typed language (such as Java) contains errors, it will fail to compile until the errors have been fixed.
+
+#### Second, statically-typed languages require you to declare the data types of your variables before you use them, while dynamically-typed languages do not.
+
+## Assign by Value VS Assign by Reference.
+
+
+### Pass by Value:
+#### A copy of the actual data (value) is passed to the function.
+#### Changes made to the parameter inside the function do not affect the original data.
+#### Used in languages like C, C++ for primitive types.
+
+### Pass by Reference:
+#### A reference (memory address) to the original data is passed to the function.
+#### Changes made to the parameter inside the function affect the original data.
+#### Used in languages like C, C++ for non-primitive types and objects.
+
 ## Resources 
 
 #### https://www.w3schools.com/php/php_intro.asp
@@ -37,3 +68,11 @@
 #### https://www.codecademy.com/forum_questions/55d1e384e39efe0f440003ea
 
 #### https://tutorialspoint.learnerstv.in/php-case-sensitivity/
+
+#### https://www.unosquare.com/blog/scripting-and-programming-languages-differences-advantages-and-optimal-use-cases/
+
+#### https://www.linkedin.com/pulse/static-dynamic-typing-what-main-differences-parallelstaff-sgore
+
+#### https://docs.oracle.com/cd/E57471_01/bigData.100/extensions_bdd/src/cext_transform_typing.html
+
+#### https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/
