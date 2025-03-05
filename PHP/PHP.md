@@ -69,6 +69,25 @@
 | The stop condition is specified easily. | The stop condition has to be explicitly specified. |
 | Upon working with collections, it needs the usage of the `count()` function. | It can simply work without the usage of the `count()` method. |
 
+## Sessions vs. Cookies.
+
+
+#### When building a website, we need to remember user information whether it’s login details, preferences, or shopping cart items. Two common ways to store this data are sessions and cookies.
+
+#### Cookies are small pieces of data stored in the user’s browser. They help remember things like login status or preferences even after closing the website.
+#### Sessions store user data on the server, making them more secure and ideal for storing temporary or sensitive information.
+
+## Error Handling in PHP.
+
+
+#### When creating scripts and web applications, error handling is an important part. If your code lacks error checking code, your program may look very unprofessional and you may be open to security risks.
+
+## How PHP Executes Code.
+
+
+#### In PHP, code execution is linear, and the compiling is carried out as well as the executing in cycles per line of a script. Yet, to enhance this flow, PHP uses caching such as opcode caching, which is the set of compiled byte codes that are necessary to run the matter faster in following requests.
+
+
 ## Resources 
 
 #### https://www.w3schools.com/php/php_intro.asp
@@ -88,3 +107,9 @@
 #### https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/
 
 #### https://www.geeksforgeeks.org/what-is-the-difference-between-for-and-foreach-loop-in-php/
+
+#### https://www.geeksforgeeks.org/difference-between-session-and-cookies/
+
+#### https://www.w3schools.com/PHP/php_error.asp
+
+#### https://medium.com/@shivanisingh16012004/understanding-php-internals-how-php-executes-code-41576dbc4a7f
