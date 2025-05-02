@@ -41,26 +41,57 @@
 ### Advantages of Using an ORM
 
 #### Improved Productivity and Code Readability
-ORMs allow developers to work with familiar language constructs (objects and methods), leading to quicker development cycles and more readable, maintainable code. Instead of writing SQL, you interact with database data as objects.
+#### ORMs allow developers to work with familiar language constructs (objects and methods), leading to quicker development cycles and more readable, maintainable code. Instead of writing SQL, you interact with database data as objects.
 
 #### Database Abstraction and Portability
-ORMs abstract away database-specific details, allowing the same code to work with different database systems (e.g., MySQL, PostgreSQL, SQLite). If you need to switch databases, you often need only minimal changes in your codebase, if any.
+#### ORMs abstract away database-specific details, allowing the same code to work with different database systems (e.g., MySQL, PostgreSQL, SQLite). If you need to switch databases, you often need only minimal changes in your codebase, if any.
 
 #### Automated Schema Management
-Many ORMs support automatic table creation and migrations, which help manage database schema changes as the application evolves. This reduces the need for manually handling schema scripts and improves version control over the database structure.
+#### Many ORMs support automatic table creation and migrations, which help manage database schema changes as the application evolves. This reduces the need for manually handling schema scripts and improves version control over the database structure.
 
 #### Reduction of Boilerplate Code
-ORMs can reduce the amount of repetitive code needed for common operations, like inserting or updating records. Instead of writing complex SQL queries, you can use simple ORM methods, making code concise and easy to maintain.
+#### ORMs can reduce the amount of repetitive code needed for common operations, like inserting or updating records. Instead of writing complex SQL queries, you can use simple ORM methods, making code concise and easy to maintain.
 
 #### Enhanced Security
-By avoiding direct SQL and using ORM functions to interact with the database, ORMs inherently protect against SQL injection attacks. They use parameterized queries or prepared statements, which help prevent attackers from injecting malicious SQL code.
+#### By avoiding direct SQL and using ORM functions to interact with the database, ORMs inherently protect against SQL injection attacks. They use parameterized queries or prepared statements, which help prevent attackers from injecting malicious SQL code.
 
 #### Automatic Query Optimization and Caching
-Many ORMs provide built-in optimizations like lazy loading (loading data only when necessary), eager loading (loading related data in advance), and caching mechanisms that can significantly improve performance without the need for manual optimization.
+#### Many ORMs provide built-in optimizations like lazy loading (loading data only when necessary), eager loading (loading related data in advance), and caching mechanisms that can significantly improve performance without the need for manual optimization.
 
 #### Easier Database Testing
-ORMs enable easier testing by allowing developers to use in-memory databases (like SQLite in memory mode) or mock databases that are easy to set up and manage within tests. This makes it simpler to isolate database behavior in unit tests without needing a full database setup.
+#### ORMs enable easier testing by allowing developers to use in-memory databases (like SQLite in memory mode) or mock databases that are easy to set up and manage within tests. This makes it simpler to isolate database behavior in unit tests without needing a full database setup.
 
+## Defining relationships in Eloquent models
+
+
+#### Database tables are often related to one another. For example, a blog post may have many comments, or an order could be related to the user who placed it. Eloquent makes managing and working with these relationships easy, and supports several different types of relationships:
+
+##### 1 - One To One
+##### 2 - One To Many
+##### 3 - Many To Many
+##### 4 - Has Many Through
+##### 5 - Polymorphic Relations
+##### 6 - Many To Many Polymorphic Relations
+
+### Defining Relationships
+#### Eloquent relationships are defined as methods on your Eloquent model classes. Since, like Eloquent models themselves, relationships also serve as powerful query builders, defining relationships as methods provides powerful method chaining and querying capabilities.
+
+## Attaching, syncing, detaching related records
+
+
+#### 1 - attach
+#### The attach method is primarily used in many-to-many relationships to add records to the pivot table that connects two models. 
+
+#### 2 - detach
+#### Conversely, the detach method allows we to remove records from a many-to-many relationship's pivot table.
+
+#### 3 - sync
+#### The sync method is a powerful way to synchronize the records in a many-to-many relationship. It takes an array of related model IDs as its argument and ensures that the pivot table contains only those records. Any existing records not in the provided array will be removed.
+
+## The N+1 query problem in Laravel
+
+
+#### The N+1 query problem occurs when an application makes one initial query to the database followed by an additional query for each result obtained from the first query. This typically happens in object-relational mapping (ORM) frameworks when dealing with relationships between models.
 
 ## Resources
 
@@ -73,3 +104,9 @@ ORMs enable easier testing by allowing developers to use in-memory databases (li
 #### https://dev.to/icornea/laravel-blade-template-engine-a-beginners-guide-54bi
 
 #### https://medium.com/@karthickrajaraja424/what-is-the-purpose-of-an-orm-and-what-are-its-advantages-ae3882e9e91e
+
+#### https://laravel.com/docs/5.5/eloquent-relationships
+
+#### https://medium.com/@rajvir.ahmed.shuvo/understanding-sync-attach-and-detach-in-laravel-managing-relationships-with-eloquent-394a7cf7fabd
+
+#### https://loadforge.com/guides/optimizing-laravel-applications-by-detecting-n1-queries
