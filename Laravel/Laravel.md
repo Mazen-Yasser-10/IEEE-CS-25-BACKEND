@@ -145,6 +145,23 @@
 #### Enables strict control over allowed filters and includes for security.
 #### Ideal for building robust, RESTful APIs with consistent, maintainable query logic.
 
+## Laravel Gates
+
+
+#### Laravel Gates are a way to manage authorization in Laravel. Gates are closures that decide whether or not a user is allowed to perform a given action and are typically defined in the app/providers/AuthServiceProvider class using the Gate facade, which provides methods for defining and checking Gates. For example, you could create a Gate that only allows users with administrative privileges to access certain pages or features of your application.
+
+## Sanctum vs Passport
+
+
+#### Before getting started, you may wish to determine if your application would be better served by Laravel Passport or Laravel Sanctum. If your application absolutely needs to support OAuth2, then you should use Laravel Passport.
+
+#### However, if you are attempting to authenticate a single-page application, mobile application, or issue API tokens, you should use Laravel Sanctum. Laravel Sanctum does not support OAuth2; however, it provides a much simpler API authentication development experience.
+
+## Guard vs middleware
+
+
+#### A guard is simply put an object that is responsible for extracting user information from a request and translating that information into an existing entity/model in your application, which will be an Authenticatable instance in most cases (not necessarily though, e.g. in Sanctum). Whenever a guard is able to translate an incoming request into a user object, it deems the operation successful and thus authenticates the user sending the request. The authentication itself happens in a middleware named... you guessed it: Authenticate. It spins through provided guard names and if there is any match, sets the found entity as the default using the shouldUse method. At that point, you're authenticated.
+
 
 ## Resources
 
@@ -169,3 +186,9 @@
 #### https://laravel-livewire.com/
 
 #### https://laraveldaily.com/packages
+
+#### https://www.twilio.com/en-us/blog/rapid-introduction-laravel-gates#How-to-Define-a-Laravel-Gate
+
+#### https://laravel.com/docs/8.x/passport#passport-or-sanctum
+
+#### https://laracasts.com/discuss/channels/laravel/custom-authentication-guard-or-middleware
